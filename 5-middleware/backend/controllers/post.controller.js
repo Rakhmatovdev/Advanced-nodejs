@@ -19,6 +19,7 @@ try {
   }
   async createPost(req, res) {
     try {
+        
       const newPost = await postService.createPost(req.body,req.files.picture)
       res.status(201).json(newPost);
     } catch (error) {

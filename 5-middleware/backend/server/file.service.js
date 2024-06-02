@@ -7,6 +7,7 @@ class FileService {
     try {
       const fileName = uuidv4() + ".jpg";
       const currentDir = __dirname;
+      console.log(fileName);
       const staticDir = path.join(currentDir, '..', 'static'); // static directory create
       const filePath = path.join(staticDir, fileName); //static directory in image
 
