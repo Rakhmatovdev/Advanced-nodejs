@@ -9,13 +9,17 @@ const authRouter = require('./routers/auth.router');
 
 const fileUpload = require('express-fileupload');
 const requestTime = require('./middlewares/request-time');
+const cookieParser = require('cookie-parser');
 const app=express()
 
+
+//Middleware
+
+app.use(requestTime)
 app.use(express.json())
+app.use(cookieParser({}))
 app.use(express.static("static"))
 app.use(fileUpload())
-app.use(requestTime)
-
 //Routes
 app.use("/api/post",postRouter)
 app.use("/api/auth",authRouter)
