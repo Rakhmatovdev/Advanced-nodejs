@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button"
+import { Route, Routes } from "react-router-dom";
+import Navbar from './components/shared/Navbar';
+import Auth from "./pages/auth";
+import Home from "./pages/home";
 
 const App = () => {
   return (
-    <div>
-      <Button/>
-    </div>
+    <>
+    <Navbar/>
+<Routes>
+    <Route path={"/"} element={<Home/>}/>
+    <Route path={"/auth"} element={<Auth/>}/>
+
+</Routes>
+    </>
   )
 }
 
